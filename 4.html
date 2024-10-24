@@ -1,0 +1,33 @@
+<html>
+<body>
+<h1>Puzzle 4</h1>
+<script>
+document.onkeydown = function(){
+	if(window.event.keyCode == 13){
+		document.getElementById("submit").click();
+	}
+};
+
+function clearAnswer() {
+	document.getElementById("magic").value = "";
+}
+
+function checkAnswer() {
+	const answer = document.getElementById("magic").value;
+	
+	if (answer == 2*8-3*3) {
+		alert("You got it!");
+	}
+	else {
+		alert("Sorry try again");
+	}
+}
+</script>
+
+
+What number am I thinking of?<input type="text" id="magic" name="magic"><br><br>
+<input type="button" onclick="checkAnswer()" value="Submit" id="submit">
+<input type="button" onclick="clearAnswer()" value="Clear" id="clear">
+
+</body>
+</html>
